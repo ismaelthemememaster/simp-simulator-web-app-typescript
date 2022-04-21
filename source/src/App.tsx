@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { ReactElement, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+// @atoms
+import TestComponent from './components/molecules/test-message';
+
+function App(): ReactElement {
+  const [darkTheme, setDarkTheme] = useState(true);
+
+  function toggleTheme(): void {
+    setDarkTheme((prevDarkTheme) => !prevDarkTheme);
+  }
+
+  function getText(): string {
+    if (darkTheme) {
+      return 'tema oscuro';
+    } else {
+      return 'tema claro';
+    }
+  }
+
   return (
     <div className='App'>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
+        <p>{}</p>
+        <button
+          onClick={toggleTheme}
+          style={{
+            backgroundColor: darkTheme ? '#000' : '#FFF',
+            color: darkTheme ? '#FFF' : '#000',
+          }}
         >
-          Learn React
-        </a>
+          {getText()}
+        </button>
+        <TestComponent />
       </header>
     </div>
   );
