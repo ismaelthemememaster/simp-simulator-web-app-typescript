@@ -1,9 +1,11 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, createContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 // @atoms
 import TestComponent from './components/molecules/test-message';
+
+//export const ThemeContext = React.createContext();
 
 function App(): ReactElement {
   const [darkTheme, setDarkTheme] = useState(true);
@@ -24,7 +26,7 @@ function App(): ReactElement {
     <div className='App'>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
-        <p>{}</p>
+        <p>probaaaaandoooo</p>
         <button
           onClick={toggleTheme}
           style={{
@@ -34,7 +36,7 @@ function App(): ReactElement {
         >
           {getText()}
         </button>
-        <TestComponent />
+        <TestComponent darkTheme={darkTheme} />
       </header>
     </div>
   );
