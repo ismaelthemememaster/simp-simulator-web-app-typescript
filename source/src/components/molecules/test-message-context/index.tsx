@@ -1,7 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
+import { ThemeContext } from '../../../App';
 
 const TestComponent = (): ReactElement => {
+  const cosa = useContext(ThemeContext);
   return (
     <Grid>
       <Typography component='span'>
@@ -10,7 +12,7 @@ const TestComponent = (): ReactElement => {
           component='p'
           fontWeight='fontWeightBold'
           display='inline'
-          color={true ? '#FFF' : '#000'}
+          color={cosa ? '#FFF' : '#000'}
         >
           "la guerrilla es real"
         </Box>

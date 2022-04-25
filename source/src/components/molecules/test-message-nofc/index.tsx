@@ -5,7 +5,7 @@ interface Props {
   darkTheme: boolean;
 }
 
-function TestComponent({ darkTheme }) {
+function TestComponent({ darkTheme }: Props) {
   function getText(): string {
     if (darkTheme) {
       return 'tema oscuro';
