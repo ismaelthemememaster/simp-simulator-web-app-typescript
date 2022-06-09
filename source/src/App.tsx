@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // @atoms
-import TestComponent from './components/molecules/test-message-context';
+import TestComponent from './components/molecules/test-message-graph';
 
 export const ThemeContext = React.createContext(true);
 
